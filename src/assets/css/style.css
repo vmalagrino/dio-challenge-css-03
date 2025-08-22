@@ -69,7 +69,7 @@
         }
 
         .banner {
-            background-image: url(/assets/images/header-bg.png);
+            background-image: url(../images/header-bg.png);
             background-size: cover;
             background-position: center;
             display: flex;
@@ -105,18 +105,73 @@
             font-family: 'Luckiest Guy';
         }
 
-        .section-4, .section-2 {
-            background-color: #F6F6F6;
+        /* ajuda gpt */
+
+        section > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            gap: 40px;
         }
 
-        @media screen and (min-width: 768px){
-            .section-1,.section-2, .section-3, .section-4 {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                align-items: center;
-                gap: 40px;
+        section h2, section p {
+            text-align: left;
+        }
+
+
+        @media (max-width: 768px) {
+            section div {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            section img {
+                max-width: 90%;
+            }
+        }
+
+        .feature .feature__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 20px;
+        }
+        .feature .feature__content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .feature .feature__media {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .feature .feature__media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .feature.feature--reverse .feature__inner {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 768px) {
+            .feature .feature__inner, 
+            .feature.feature--reverse .feature__inner {
+                flex-direction: column;
                 text-align: left;
             }
 
- 
+            .feature .feature__media, 
+            .feature .feature__content {
+                width: 100%;
+            }
         }
